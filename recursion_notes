@@ -1,0 +1,123 @@
+Recursion:
+
+ Factorial Prgram :-
+ n! = { n * (n-1)! if n>0
+ 		1 		   if n=0
+		
+int fac(int n){
+	if(n==0)
+		return 1;
+	return n * fac(n-1);
+}
+ 
+ f(0)=1;
+
+			return 		state
+	f(4)	4 * f(3)	Pause
+	f(3)	3 * f(2)	P
+	f(2)	2 * f(1)	P
+	f(1)	1 * f(0) 
+	
+f(0) completes and then the rest do the same and exit with result.
+
+Fibonacci Sequence :-
+
+Why recursion is always not good.
+
+iterative approach:				
+
+int fib(int n){					
+	if(n<=1)
+		return n;
+	int f,f1,f2;
+	f1=0;
+	f2=1;
+	for(int i=2;i<n;i++){
+			f=f1+f2;
+			f1=f2;
+			f2=f;
+		}
+	return f;	
+}
+
+recursive	
+
+int fib(int n){
+	if(n<=1)
+	return n;
+	
+	return fib(n-1)+fib(n-2);
+}
+
+In iterative approach each fib(5),fib(4) is calculated exactly once.
+but in recursive approach
+f(5)=f(4)+f(3)
+f(4)=f(3)+f(2)
+f(3)=f(2)+f(1)
+f(2)=f(1)+f(0)
+
+there are multiple calls for finding fib(n) which was already calculated	
+
+
+Analyse Complexity of recursive program :-
+Time and space
+
+int fac(int n){
+	if(n==0) // 1 unit
+		return 1;
+	return n * fac(n-1); 
+	// multiplication 1 unit and subtraction 1 unit
+}
+
+f(0)=1;
+
+Time:-
+t(n) = t(n-1) + 3  if n>0
+	 = t(n-2) + 3 + 3
+	 = t(n-3) + 3 + 3 + 3
+	 = t(n-k) + 3k
+for deducing for base case t(0)
+n-k=0, n=k
+t(n) = t(0)+3n
+	 = 1 + 3n
+t(n) is proportional to n	 
+	time = O(n)
+
+Space:-	
+
+f(5) -> f(4) -> f(3) -> f(2) -> f(1) -> f(0)
+Each function is paused and save the state containing variables in implicit stack memory
+
+This leads to longest path of recursion tree which is her is 5
+space is proportional to n = O(n)
+
+
+
+Analysis of Fibonacci sequence:	
+
+fib(n)={ f(n-1) + f(n-2) if n>1
+		 0 if n=0
+		 1 if n=1
+		 
+int fib(int n){
+if(n<=1) return n;
+return fib(n-1) + fib(n-2);
+}		 
+t(0)=0, t(1)=1
+t(n)=t(n-1)+t(n-2) + 4 for n>1
+// upper bound 
+Assuming t(n-1) = t(n-2)
+t(n)=2t(n-1)+ c  	where c=4
+	=4t(n-2)+2c + c =4t(n-2)+3c
+	=8t(n-3)+6c + c =4t(n-3)+7c
+	=2^kt(n-k)+(2^k -1)c
+	
+	Assuming for base case t(0)=t(1)=1
+	n-k=0, k=n
+t(n)=2^nt(1)+(2^n -1)c
+	=2^n + 2^n c -c
+	=(1+c)2^n -c
+	=O(2^n)
+
+
+
