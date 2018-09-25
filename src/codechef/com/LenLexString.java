@@ -43,7 +43,7 @@ Query 2: For strings S1 through S3, the longest common prefix with maximum lengt
 
 Query 3: For strings S1 through S4, the longest common prefix with maximum length is "abcde"; it is the LCP for strings "abcdex" and "abcde", but "abcde" is the lexicographically smaller string, so it is the answer.
 */
-package amit.codechef.com;
+package codechef.com;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,60 +53,60 @@ import java.util.Scanner;
 public class LenLexString {
 
 	public static void main(String[] args) {
-		Scanner sc=new Scanner(System.in);
-		int size=sc.nextInt();
-		String[] arr=new String[size];
-		for(int i=0;i<size;i++) {
-			arr[i]=sc.next();
+		Scanner sc = new Scanner(System.in);
+		int size = sc.nextInt();
+		String[] arr = new String[size];
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.next();
 		}
-		int test=sc.nextInt();
-		while(test>0) {
-			int range=sc.nextInt();
-			String query=sc.next();
-			System.out.println(maxLenLex(range,query,arr));
+		int test = sc.nextInt();
+		while (test > 0) {
+			int range = sc.nextInt();
+			String query = sc.next();
+			System.out.println(maxLenLex(range, query, arr));
 			test--;
 		}
 		sc.close();
 	}
-	
-	static String maxLenLex(int range,String query,String[] arr) {
-		String maxPrexWord=maxPrexWrapper(range,query,arr);
-		int lenPW=maxPrexWord.length();
-		List<String> prexWords=new ArrayList<>();
-		for(int i=0;i<range;i++) {
-			if(arr[i].length()<lenPW) {
+
+	static String maxLenLex(int range, String query, String[] arr) {
+		String maxPrexWord = maxPrexWrapper(range, query, arr);
+		int lenPW = maxPrexWord.length();
+		List<String> prexWords = new ArrayList<>();
+		for (int i = 0; i < range; i++) {
+			if (arr[i].length() < lenPW) {
 				i++;
-			}else {
-				if(arr[i].contains(maxPrexWord)) {
+			} else {
+				if (arr[i].contains(maxPrexWord)) {
 					prexWords.add(arr[i]);
-				}else {
+				} else {
 					i++;
 				}
 			}
 		}
 		Collections.sort(prexWords);
-		
+
 		return prexWords.get(0);
 	}
-	
-	static String maxPrexWrapper(int range,String query,String[] arr) {
-		String maxPrex="";
-		int max=0;
-		for(int i=1;i<range;i++) {
-			String temp=maxPrex(query,arr[i]);
-			if(temp.length()>max) {
-				maxPrex=temp;
+
+	static String maxPrexWrapper(int range, String query, String[] arr) {
+		String maxPrex = "";
+		int max = 0;
+		for (int i = 1; i < range; i++) {
+			String temp = maxPrex(query, arr[i]);
+			if (temp.length() > max) {
+				maxPrex = temp;
 			}
 		}
 		return maxPrex;
 	}
-	
-	static String maxPrex(String query,String arrVal) {
-		int count=0;
-		for(int i=0;i<query.length() && i<arrVal.length();i++) {
-			if(query.charAt(i)!=arrVal.charAt(i)) {
+
+	static String maxPrex(String query, String arrVal) {
+		int count = 0;
+		for (int i = 0; i < query.length() && i < arrVal.length(); i++) {
+			if (query.charAt(i) != arrVal.charAt(i)) {
 				break;
-			}else {
+			} else {
 				count++;
 			}
 		}

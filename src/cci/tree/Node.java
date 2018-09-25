@@ -1,11 +1,12 @@
-package amit.cci.tree;
+package cci.tree;
 
-class Node{
+class Node {
 	public Node left;
 	public Node right;
 	public int data;
+
 	public Node(int data) {
-		this.data=data;
-		left=right=null;
+		this.data = data;
+		left = right = null;
 	}
 }

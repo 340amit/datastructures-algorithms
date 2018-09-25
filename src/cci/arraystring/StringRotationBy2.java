@@ -1,4 +1,4 @@
-package amit.cci.arraystring;
+package cci.arraystring;
 
 public class StringRotationBy2 {
 

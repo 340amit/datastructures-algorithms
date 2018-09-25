@@ -33,7 +33,7 @@ Example case 1: The submatrix with the largest trace is
 2 7
 which has trace equal to 6+7=13. (This submatrix is obtained for r=2,c=1,l=2.)*/
 
-package amit.codechef.com;
+package codechef.com;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,18 +43,18 @@ import java.util.StringTokenizer;
 public class MaxSquareSubMatrix {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		int testCase=Integer.parseInt(br.readLine());
-		
-		while(testCase>0) {
-			int n=Integer.parseInt(br.readLine());
-			int[][] matrix=new int[n][n];
-			for(int r=0;r<n;r++) {
-				StringTokenizer st=new StringTokenizer(br.readLine());
-				for(int c=0;c<n;c++) {
-					int val=Integer.parseInt(st.nextToken());
-					System.out.print(val+" ");
-					matrix[r][c]=val;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int testCase = Integer.parseInt(br.readLine());
+
+		while (testCase > 0) {
+			int n = Integer.parseInt(br.readLine());
+			int[][] matrix = new int[n][n];
+			for (int r = 0; r < n; r++) {
+				StringTokenizer st = new StringTokenizer(br.readLine());
+				for (int c = 0; c < n; c++) {
+					int val = Integer.parseInt(st.nextToken());
+					System.out.print(val + " ");
+					matrix[r][c] = val;
 				}
 				System.out.println();
 			}
@@ -64,28 +64,28 @@ public class MaxSquareSubMatrix {
 		}
 
 	}
-	
+
 	public static int maxTraceSubMatrix(int[][] matrix) {
-		int n=matrix.length;
-		int sum=0;
-		int max=0;
-		for(int r=0;r<n-1;r++) {
-			for(int c=0;c<n-1;c++) {
-				sum=matrix[r][c] + matrix[r+1][c+1];
+		int n = matrix.length;
+		int sum = 0;
+		int max = 0;
+		for (int r = 0; r < n - 1; r++) {
+			for (int c = 0; c < n - 1; c++) {
+				sum = matrix[r][c] + matrix[r + 1][c + 1];
 				System.out.println(sum);
-				max=Math.max(sum, max);
+				max = Math.max(sum, max);
 			}
 		}
-		System.out.println("max:"+max);
+		System.out.println("max:" + max);
 		return max;
 	}
-	
+
 	public static void printMatrix(int[][] matrix) {
-		int n=matrix.length;
-		for(int r=0;r<n;r++) {
-			for(int c=0;c<n;c++) {
-				int val=matrix[r][c];
-				System.out.print(val+" ");
+		int n = matrix.length;
+		for (int r = 0; r < n; r++) {
+			for (int c = 0; c < n; c++) {
+				int val = matrix[r][c];
+				System.out.print(val + " ");
 			}
 			System.out.println();
 		}

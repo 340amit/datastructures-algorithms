@@ -1,5 +1,5 @@
 //https://www.codechef.com/problems/RAINBOWA
-package amit.codechef.com;
+package codechef.com;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,7 +29,7 @@ public class RainbowArray {
 			}
 		}
 	}
-	
+
 	static boolean isMirror(int[] a) {
 		int l = a.length;
 		for (int i = 0; i < l; i++) {

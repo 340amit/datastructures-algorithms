@@ -1,4 +1,4 @@
-package amit.cci.arraystring;
+package cci.arraystring;
 
 import java.io.IOException;
 
@@ -7,10 +7,8 @@ public class StringCompression {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// System.out.println(strCompression("aaaaaabb"));
 		// int a[]= {1,2,3,4,5,6,7,6,5,4,3,2,1,1};
-		
-	}
 
-	
+	}
 
 	static String strCompression(String s) {
 		int count = 0;

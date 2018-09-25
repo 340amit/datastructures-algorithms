@@ -32,7 +32,7 @@ Example Output
 Explanation
 Example case 1: The two palindromic cyclic shifts of "aabb" are "abba" and "baab".*/
 
-package amit.codechef.com;
+package codechef.com;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,15 +41,15 @@ import java.io.InputStreamReader;
 public class ShiftPalindrome {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-		int test=Integer.parseInt(br.readLine());
-		while(test>0) {
-			String input=br.readLine();
-			String r=input;
-			int count=0;
-			for(int i=0;i<input.length();i++) {
-				r=rotateByOne(r);
-				if(isPalindrome(r)) {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int test = Integer.parseInt(br.readLine());
+		while (test > 0) {
+			String input = br.readLine();
+			String r = input;
+			int count = 0;
+			for (int i = 0; i < input.length(); i++) {
+				r = rotateByOne(r);
+				if (isPalindrome(r)) {
 					count++;
 				}
 			}
@@ -57,26 +57,26 @@ public class ShiftPalindrome {
 			test--;
 		}
 	}
-	
+
 	public static String rotateByOne(String r) {
-		char[] a=r.toCharArray();
-		char x=a[0];
+		char[] a = r.toCharArray();
+		char x = a[0];
 		int i;
-		for(i=0;i<a.length-1;i++) {
-			a[i]=a[i+1];
+		for (i = 0; i < a.length - 1; i++) {
+			a[i] = a[i + 1];
 		}
-		a[i]=x;
+		a[i] = x;
 		return new String(a);
 	}
-	
+
 	public static boolean isPalindrome(String p) {
-		char[] a=p.toCharArray();
-		int l=0;
-		int r=a.length-1;
-		while(l<r) {
-			if(a[l]!=a[r]) {
+		char[] a = p.toCharArray();
+		int l = 0;
+		int r = a.length - 1;
+		while (l < r) {
+			if (a[l] != a[r]) {
 				return false;
-			}else {
+			} else {
 				l++;
 				r--;
 			}

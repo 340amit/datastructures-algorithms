@@ -1,5 +1,4 @@
-package amit.cci.linkedlist;
-
+package cci.linkedlist;
 
 public class SumList {
 	static Node head;
@@ -21,23 +20,25 @@ public class SumList {
 		sl.printList(head);
 
 	}
-//	1 -> 2 -> 3 ->null
-//	3 -> 2 -> 1 ->null
+
+	// 1 -> 2 -> 3 ->null
+	// 3 -> 2 -> 1 ->null
 	Node reverse(Node n1) {
-		Node prev=null;
-		Node current=n1;
-		Node next=null;
-		while(current!=null) {
-			next=current.next;
-			current.next=prev;
-			prev=current;
-			current=next;
+		Node prev = null;
+		Node current = n1;
+		Node next = null;
+		while (current != null) {
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
 		}
-		n1=prev;
+		n1 = prev;
 		return n1;
 	}
-	void sumListReverse(Node n1,Node n2) {
-		
+
+	void sumListReverse(Node n1, Node n2) {
+
 	}
 
 	void sumList(Node n1, Node n2) {
@@ -52,28 +53,30 @@ public class SumList {
 			} else {
 				rem = d;
 			}
-//			push(rem);
+			// push(rem);
 			append(rem);
 			n1 = n1.next;
 			n2 = n2.next;
 		}
 	}
+
 	void append(int data) {
-		Node new_node=new Node(data);
-		if(head==null) {
-			head=new_node;
+		Node new_node = new Node(data);
+		if (head == null) {
+			head = new_node;
 			return;
 		}
-		Node n=head;
-		while(n.next!=null) {
-			n=n.next;
+		Node n = head;
+		while (n.next != null) {
+			n = n.next;
 		}
-		n.next=new_node;
+		n.next = new_node;
 	}
+
 	void push(int data) {
-		Node new_node=new Node(data);
-		new_node.next=head;
-		head=new_node;
+		Node new_node = new Node(data);
+		new_node.next = head;
+		head = new_node;
 	}
 
 	void printList(Node n) {
