@@ -7,7 +7,7 @@ public class MaorityElement {
 
 	public static void main(String[] args) {
 		MaorityElement me = new MaorityElement();
-		int[] input = { 2, 2, 1, 1, 1, 2, 2 };
+		int[] input = { 2, 2, 1, 1, 1,2,2};
 		System.out.println(me.majorityElement2(input));
 
 	}

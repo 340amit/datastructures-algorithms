@@ -19,6 +19,7 @@ public class BFSGraph {
 
 	public void addEdge(int v, int w) {
 		adj[v].add(w);
+//		adj[w].add(v);
 	}
 
 	public void bfsTraversal(int s) {

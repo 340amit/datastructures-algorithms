@@ -1,7 +1,7 @@
 //90 degree rotation anticlockwise
 package cci.arraystring;
 
-public class ArrayRotation {
+public class MatrixArrayRotation {
 
 	public static void main(String[] args) {
 		int N = 4;
