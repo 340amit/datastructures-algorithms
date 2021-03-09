@@ -26,5 +26,19 @@ public class PalindromeNumber {
 		}
 		return true;
 	}
+	
+	 public boolean isPalindrome(String s) {
+	        
+	        if(s!=null && s.length()>1){
+	            int start=0;
+	            int end = s.length()-1;
+	            while(start<end){
+	                if(Character.isWhitespace(s.charAt(start))|| !Character.isLetterOrDigit(s.charAt(start))) start++;
+	                if(Character.isWhitespace(s.charAt(end))|| !Character.isLetterOrDigit(s.charAt(end))) end--;
+	                if(Character.toLowerCase(start) != Character.toLowerCase(end)) return false;
+	            }
+	        }
+	        return true;
+	    }
 
 }

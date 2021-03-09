@@ -6,7 +6,8 @@ public class Sorting {
 
 	public static void main(String[] args) {
 		Sorting s = new Sorting();
-		int a[] = { 23, 25, 12, 22, 11 };
+//		int a[] = { 23, 25, 12, 22, 11 };
+		int a[] = {3, 2, 1, 5, 6, 4};
 		// System.out.println(s.bs(a, 12, 0, a.length-1));
 		// int b[]= {4, 5, 6, 7, 8, 9, 10, 1, 2, 3};
 		// System.out.println(s.findPivotBS(b, 0, b.length-1));
@@ -121,7 +122,7 @@ public class Sorting {
 		int pivot = a[h];
 		int i = l - 1;
 		for (int j = l; j < h; j++) {
-			if (a[j] <= pivot) {
+			if (a[j] < pivot) {
 				i++;
 				int temp = a[i];
 				a[i] = a[j];

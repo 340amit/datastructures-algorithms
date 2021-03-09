@@ -117,8 +117,8 @@ public class NGE {
 	}
 
 	public static void main(String[] args) {
-		int arr[] = { 11, 13, 21, 3 };
-		// int arr[] ={4, 5, 2, 25};
+//		int arr[] = { 11, 13, 21, 3 };
+		int arr[] ={4, 5, 2, 25};
 		int n = arr.length;
 		printNGE(arr, n);
 		System.out.println("NGE2");

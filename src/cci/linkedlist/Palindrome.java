@@ -24,7 +24,13 @@ public class Palindrome {
 
 		Palindrome p = new Palindrome();
 		p.printList(head);
-		System.out.println("Palindrome:" + p.isPalindrom(head));
+//		System.out.println("Palindrome:" + p.isPalindrom(head));
+//		1 2 3 4 3 2 1
+//		1 2 3 4 3 2 1
+		Node current = head;
+		Node x = p.reverse(current);
+		p.printList(x);
+		p.printList(head);
 
 	}
 
@@ -98,8 +104,21 @@ public class Palindrome {
 			prev = current;
 			current = next;
 		}
-		n = prev;
-		return n;
+//		n = prev;
+		return prev;
 	}
+	
+	 Node reverseList(Node node){
+	        Node prev= null;
+	        Node next=null;
+	        Node current=node;
+	        while(current !=null){
+	            next = current.next;
+	            current.next=prev;
+	            prev=current;
+	            current=next; 
+	        } 
+	        return prev;
+	    }
 
 }
